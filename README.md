@@ -7,8 +7,8 @@ First install all requirements via `pip install -r requirements.txt`
 ## Settings
 1. Create a copy of the env.example as webmonitor.env
 2. In webmonitor.env
-    1. `URL` = "YOUR URL HERE eg: www.github.com"
-    2. `CHECK_AFTE`R = After how many seconds the url should be checked again
+    1. `URL` = "YOUR URL HERE" eg: https://www.github.com
+    2. `CHECK_AFTER` = After how many seconds the url should be checked again
     3. `RESEND_MAIL_AFTER` = If an error occurs and mail is sent, after how many seconds should the mail be sent again
     4. `LOGFILE_NAME` = Name of the logfile to be generated
     5. `USER_SMTP_HOST` = smtp host, default is smtp.gmail.com
