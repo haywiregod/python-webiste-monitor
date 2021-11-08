@@ -10,6 +10,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 from os import environ
+from urllib.parse import urlparse
 
 load_dotenv('webmonitor.env')
 REMOTE_SERVER = environ.get("REMOTE_SERVER", "www.google.com")
@@ -97,6 +98,10 @@ http_status_codes = {
 
 def isValidURL(str):
 
+    url = urlparse(str)
+    return (url.scheme and url.path)
+    if not (url.scheme and url.path):
+        raise ValueError("User did not enter a correct url!")
     # Regex to check valid URL
     regex = ("((http|https)://)(www.)?" +
              "[a-zA-Z0-9@:%._\\+~#?&//=]" +
